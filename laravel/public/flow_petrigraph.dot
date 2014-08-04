@@ -1,0 +1,183 @@
+digraph 3 {
+
+subgraph cluster_4 {
+  label = "Geomagilles\\FlowGraph\\Components\\Begin\\Begin (id=4)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  id_53e00856c6983->id_53e00856bc76e;
+}
+
+subgraph cluster_5 {
+  label = "Acme\\Flows\\Test@init (id=5)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  id_53e00856dda86->id_53e00856dd800;
+  id_53e00856dd800->id_53e00856dd92a;
+  id_53e00856dd92a->id_53e00856dd88e;
+  id_53e00856dd88e->id_53e00856dd9bd;
+  id_53e00856dd9bd->id_53e00856dd6d6;
+  id_53e00856dddd0->id_53e00856dd6d6;
+  id_53e00856dddd0->id_53e00856ddff3;
+  id_53e00856ddff3->id_53e00856dda86;
+  id_53e00856dda86->id_53e00856ddff3;
+  id_53e00856dd6d6->id_53e00856dd92a;
+  id_53e00856dd9bd->id_53e00856dd76f;
+  id_53e00856de327->id_53e00856dd76f;
+  id_53e00856de327->id_53e00856de5ee;
+  id_53e00856de5ee->id_53e00856dda86;
+  id_53e00856dda86->id_53e00856de5ee;
+  id_53e00856dd76f->id_53e00856dda86;
+}
+
+subgraph cluster_6 {
+  label = "Acme\\Flows\\Test@decision (id=6)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  id_53e00856defe6->id_53e00856ded4e;
+  id_53e00856ded4e->id_53e00856deeb7;
+  id_53e00856deeb7->id_53e00856deddd;
+  id_53e00856deddd->id_53e00856def4f;
+  id_53e00856def4f->id_53e00856deb61;
+  id_53e00856df3c1->id_53e00856deb61;
+  id_53e00856df3c1->id_53e00856df5d7;
+  id_53e00856df5d7->id_53e00856defe6;
+  id_53e00856defe6->id_53e00856df5d7;
+  id_53e00856deb61->id_53e00856deeb7;
+  id_53e00856def4f->id_53e00856debf9;
+  id_53e00856df960->id_53e00856debf9;
+  id_53e00856df960->id_53e00856dfb25;
+  id_53e00856dfb25->id_53e00856defe6;
+  id_53e00856defe6->id_53e00856dfb25;
+  id_53e00856debf9->id_53e00856defe6;
+  id_53e00856def4f->id_53e00856decab;
+  id_53e00856dfeae->id_53e00856decab;
+  id_53e00856dfeae->id_53e00856e00a1;
+  id_53e00856e00a1->id_53e00856defe6;
+  id_53e00856defe6->id_53e00856e00a1;
+  id_53e00856decab->id_53e00856defe6;
+}
+
+subgraph cluster_7 {
+  label = "Acme\\Flows\\Test@wait (id=7)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  id_53e00856e09e3->id_53e00856e06db;
+  id_53e00856e06db->id_53e00856e0851;
+  id_53e00856e0851->id_53e00856e0770;
+  id_53e00856e0770->id_53e00856e093c;
+  id_53e00856e093c->id_53e00856e05d9;
+  id_53e00856e0d37->id_53e00856e05d9;
+  id_53e00856e0d37->id_53e00856e0f66;
+  id_53e00856e0f66->id_53e00856e09e3;
+  id_53e00856e09e3->id_53e00856e0f66;
+  id_53e00856e05d9->id_53e00856e0851;
+  id_53e00856e093c->id_53e00856e0659;
+  id_53e00856e1224->id_53e00856e0659;
+  id_53e00856e1224->id_53e00856e143d;
+  id_53e00856e143d->id_53e00856e09e3;
+  id_53e00856e09e3->id_53e00856e143d;
+  id_53e00856e0659->id_53e00856e09e3;
+}
+
+subgraph cluster_8 {
+  label = "Acme\\Flows\\Test@increment (id=8)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  id_53e00856e1ca8->id_53e00856e1a49;
+  id_53e00856e1a49->id_53e00856e1b79;
+  id_53e00856e1b79->id_53e00856e1adb;
+  id_53e00856e1adb->id_53e00856e1c1a;
+  id_53e00856e1c1a->id_53e00856e1915;
+  id_53e00856e1f93->id_53e00856e1915;
+  id_53e00856e1f93->id_53e00856e216d;
+  id_53e00856e216d->id_53e00856e1ca8;
+  id_53e00856e1ca8->id_53e00856e216d;
+  id_53e00856e1915->id_53e00856e1b79;
+  id_53e00856e1c1a->id_53e00856e19b4;
+  id_53e00856e244e->id_53e00856e19b4;
+  id_53e00856e244e->id_53e00856e2622;
+  id_53e00856e2622->id_53e00856e1ca8;
+  id_53e00856e1ca8->id_53e00856e2622;
+  id_53e00856e19b4->id_53e00856e1ca8;
+}
+
+subgraph cluster_9 {
+  label = "Geomagilles\\FlowGraph\\Components\\End\\End (id=9)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  id_53e00856e41ef->id_53e00856e42c7;
+}
+id_53e00856c6983 [label="0",shape="circle"];
+id_53e00856dd92a [label="0",shape="circle"];
+id_53e00856dd9bd [label="0",shape="circle"];
+id_53e00856dda86 [label="1",shape="circle"];
+id_53e00856dddd0 [label="0",shape="circle"];
+id_53e00856de327 [label="0",shape="circle"];
+id_53e00856de9e1 [label="0",shape="circle"];
+id_53e00856deeb7 [label="0",shape="circle"];
+id_53e00856def4f [label="1",shape="circle"];
+id_53e00856defe6 [label="0",shape="circle"];
+id_53e00856df3c1 [label="0",shape="circle"];
+id_53e00856df960 [label="1",shape="circle"];
+id_53e00856dfeae [label="0",shape="circle"];
+id_53e00856e044c [label="0",shape="circle"];
+id_53e00856e0851 [label="0",shape="circle"];
+id_53e00856e093c [label="0",shape="circle"];
+id_53e00856e09e3 [label="1",shape="circle"];
+id_53e00856e0d37 [label="0",shape="circle"];
+id_53e00856e1224 [label="0",shape="circle"];
+id_53e00856e1800 [label="0",shape="circle"];
+id_53e00856e1b79 [label="0",shape="circle"];
+id_53e00856e1c1a [label="0",shape="circle"];
+id_53e00856e1ca8 [label="1",shape="circle"];
+id_53e00856e1f93 [label="0",shape="circle"];
+id_53e00856e244e [label="0",shape="circle"];
+id_53e00856e29d3 [label="0",shape="circle"];
+id_53e00856e42c7 [label="0",shape="circle"];
+id_53e00856e4456 [label="0",shape="circle"];
+id_53e00856bc76e [label="",shape=square, fontsize=10];
+id_53e00856dd6d6 [label="__retry",shape=square, fontsize=10];
+id_53e00856dd76f [label="",shape=square, fontsize=10];
+id_53e00856dd800 [label="",shape=square, fontsize=10];
+id_53e00856dd88e [label="",shape=box];
+id_53e00856ddff3 [label="",shape=box];
+id_53e00856de5ee [label="",shape=box];
+id_53e00856deb61 [label="__retry",shape=square, fontsize=10];
+id_53e00856debf9 [label="continue",shape=square, fontsize=10];
+id_53e00856decab [label="reached",shape=square, fontsize=10];
+id_53e00856ded4e [label="",shape=square, fontsize=10];
+id_53e00856deddd [label="",shape=box];
+id_53e00856df5d7 [label="",shape=box];
+id_53e00856dfb25 [label="",shape=box];
+id_53e00856e00a1 [label="",shape=box];
+id_53e00856e05d9 [label="__retry",shape=square, fontsize=10];
+id_53e00856e0659 [label="",shape=square, fontsize=10];
+id_53e00856e06db [label="",shape=square, fontsize=10];
+id_53e00856e0770 [label="",shape=box];
+id_53e00856e0f66 [label="",shape=box];
+id_53e00856e143d [label="",shape=box];
+id_53e00856e1915 [label="__retry",shape=square, fontsize=10];
+id_53e00856e19b4 [label="",shape=square, fontsize=10];
+id_53e00856e1a49 [label="",shape=square, fontsize=10];
+id_53e00856e1adb [label="",shape=box];
+id_53e00856e216d [label="",shape=box];
+id_53e00856e2622 [label="",shape=box];
+id_53e00856e41ef [label="",shape=square, fontsize=10];
+id_53e00856de9e1->id_53e00856dd800;
+id_53e00856e044c->id_53e00856ded4e;
+id_53e00856e1800->id_53e00856e06db;
+id_53e00856e29d3->id_53e00856e1a49;
+id_53e00856e4456->id_53e00856e41ef;
+id_53e00856bc76e->id_53e00856de9e1;
+id_53e00856dd76f->id_53e00856e044c;
+id_53e00856debf9->id_53e00856e29d3;
+id_53e00856decab->id_53e00856e1800;
+id_53e00856e0659->id_53e00856e4456;
+id_53e00856e19b4->id_53e00856e044c;
+}

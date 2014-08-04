@@ -1,0 +1,65 @@
+digraph "3" {
+
+subgraph cluster_4 {
+  label = "Geomagilles\\FlowGraph\\Components\\Begin\\Begin (id=4)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  1 [label="Out",shape="square"];
+}
+
+subgraph cluster_5 {
+  label = "Acme\\Flows\\Test@init (id=5)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  1 [label="In",shape="square"];
+  2 [label="__retry",shape="square"];
+  3 [label="Out",shape="square"];
+}
+
+subgraph cluster_6 {
+  label = "Acme\\Flows\\Test@decision (id=6)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  2 [label="In",shape="square"];
+  4 [label="__retry",shape="square"];
+  5 [label="continue",shape="square"];
+  6 [label="reached",shape="square"];
+}
+
+subgraph cluster_7 {
+  label = "Acme\\Flows\\Test@wait (id=7)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  3 [label="In",shape="square"];
+  7 [label="__retry",shape="square"];
+  8 [label="Out",shape="square"];
+}
+
+subgraph cluster_8 {
+  label = "Acme\\Flows\\Test@increment (id=8)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  4 [label="In",shape="square"];
+  9 [label="__retry",shape="square"];
+  10 [label="Out",shape="square"];
+}
+
+subgraph cluster_9 {
+  label = "Geomagilles\\FlowGraph\\Components\\End\\End (id=9)";
+  style = filled;
+  color = lightgrey;
+  node [style=filled,color=white];
+  5 [label="In",shape="square"];
+}
+"1"->"1";
+"3"->"2";
+"5"->"4";
+"6"->"3";
+"8"->"5";
+"10"->"2";
+}
