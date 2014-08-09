@@ -26,4 +26,22 @@ class FlowController extends BaseController
         
         echo "Flow ".$graph->getId()." started on instance ". $instance->getId();
     }
+
+    public function dump($name)
+    {
+        $graph = Graph::getFirstBy('name', $name);
+
+        if (is_null($graph)) {
+            if ($name == 'test') {
+                $graph = Test::build();
+            } else {
+                throw new Exception('Unknown flow "$name"');
+            }
+            $graph = Graph::store($graph);
+        }
+        
+        $graph->dump();
+        
+        echo "Flow ".$graph->getId()." dumped ";
+    }
 }

@@ -9,27 +9,29 @@ class Test
     public function init(&$j, &$increment, &$target)
     {
         $j = 1;
-        $increment = 2;
+        $increment = 4;
         $target = 7;
     }
 
-    public function decision($j, $target, $_)
+    public function decision($j, $target)
     {
-        ($j < $target) ? $_->follow('continue') : $_->follow('reached');
+        if ($j >= $target) {
+            return 'reached';
+        }
     }
 
-    public function noWait(&$uid, $_)
+    public function noWait(&$uid, UserEvent $event)
     {
         // Add listener on firing job
-        if ($uid == $_->event->getUserId()) {
-            $_->follow('updated');
+        if ($uid == $event->getUserId()) {
+            return 'updated';
         };
     }
 
-    public function wait($_)
+    public function wait()
     {
-        //$_->wait(Carbon::now()->addSeconds(20));
-        $_->wait(4);
+        return Carbon::now()->addSeconds(20);
+        //return 4;
     }
 
     public function increment(&$j, $increment)
@@ -39,25 +41,37 @@ class Test
 
     public static function build()
     {
-        $builder = new GraphBuilder('test');
+        //$begin     = $new->begin();
+        //$init      = $new->task(__CLASS__.'@init');
+        //$decision  = $new->task(__CLASS__.'@decision');
+        //$increment = $new->task(__CLASS__.'@increment');
+        //$wait      = $new->wait(__CLASS__.'@waitTime'); // UserEvent::EMAIL_UPDATED, __CLASS__.'@waitEvent')
+        //$end       = $new->end();
+        //
+        //$new->connect($begin, $init)
+        //    ->connect($init, $decision)
+        //    ->connect($decision->continue, $increment)
+        //    ->connect($decision->reached, $wait)
+        //    ->connect($increment, $decision);
+        //    ->connect($wait, $end);
 
-        $begin     = $builder->addBegin();
-        $init      = $builder->addTask(__CLASS__.'@init');
-        $decision  = $builder->addTask(__CLASS__.'@decision', ['continue', 'reached']);
-        $wait      = $builder->addTask(__CLASS__.'@wait');
-        //$wait->addListener(UserEvent::EMAIL_UPDATED, __CLASS__.'@noWait');
+        $new = new GraphBuilder('test');
 
-        $increment = $builder->addTask(__CLASS__.'@increment');
-        $end       = $builder->addEnd();
+        $begin     = $new->begin();
+        $init      = $new->task(__CLASS__.'@init');
+        $decision  = $new->task(__CLASS__.'@decision')->withOutput('reached');
+        $wait      = $new->wait(__CLASS__.'@wait');//->withTrigger('trig1', UserEvent::EMAIL_UPDATED, __CLASS__.'@waitEvent');
+        $increment = $new->task(__CLASS__.'@increment');
+        $end       = $new->end();
 
-        $builder->addArc($begin, $init);
-        $builder->addArc($init, $decision);
-        $builder->addArc($decision, $increment, 'continue');
-        $builder->addArc($decision, $wait, 'reached');
-        $builder->addArc($wait, $end);
-        $builder->addArc($increment, $decision);
-        $graph = $builder->getGraph();
+        $new->connect($begin, $init)
+            ->connect($init, $decision)
+            ->connect($decision, $increment)
+            ->connect($decision->output('reached'), $wait)
+            ->connect($wait, $end)
+            //->connect($wait->trigger('trig1'), $decision)
+            ->connect($increment, $decision);
 
-        return $builder->getGraph();
+        return $new->getGraph();
     }
 }

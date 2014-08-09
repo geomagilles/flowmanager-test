@@ -21,4 +21,5 @@ Route::group(array('prefix' => 'instance/{id}'), function () {
 
 Route::group(array('prefix' => 'flow/{name}'), function () {
     Route::get('/start', 'FlowController@start');
+    Route::get('/dump', 'FlowController@dump');
 });

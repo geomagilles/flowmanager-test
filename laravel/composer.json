@@ -11,6 +11,10 @@
         {
             "type": "vcs",
             "url":  "git@github.com:geomagilles/flowmanager.git"
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:geomagilles/flowgraph.git"
         }
     ],
 	"autoload": {
@@ -40,5 +44,5 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "dev"
 }
